@@ -10,8 +10,9 @@ var addr = $(all[0]).find('div.objectsItemInfoAddress:contains("Адрес об�
 var builder = $(all[0]).find('div.objectsItemActivityOwner:contains("Генподрядчик")').find("a").text();
 var contactB = $(all[0]).find('div.objectsItemInfoAddress:contains("Контакты генподрядчика")').find("p").text();
 var url = $(all[0]).find('div.objectsItemActivityOwner:contains("Генподрядчик") > a').attr('href');
+var email = '';
 var win = window.open(url, '_blank'); setTimeout(function() {
-	var email = win.$('div.companyInfoContactEmail').find('a').text();
+	email = win.$('div.companyInfoContactEmail').find('a').text();
 	win.close();
 }, 5000);
 var sum = $(all[0]).find('div.objectsItemInfoTotal').find("b").text();
@@ -34,9 +35,9 @@ for (index = 1; index < all.length; index++) {
 	//contactC = $(all[index]).find('div.objectsItemInfoAddress:contains("Контакты  заказчика")').find("p").text();
 	builder = $(all[index]).find('div.objectsItemActivityOwner:contains("Генподрядчик")').find("a").text();
 	contactB = $(all[index]).find('div.objectsItemInfoAddress:contains("Контакты генподрядчика")').find("p").text();
-	var url = $(all[index]).find('div.objectsItemActivityOwner:contains("Генподрядчик") > a').attr('href');
-	var win = window.open(url, '_blank'); setTimeout(function() {
-		var email = win.$('div.companyInfoContactEmail').find('a').text();
+	url = $(all[index]).find('div.objectsItemActivityOwner:contains("Генподрядчик") > a').attr('href');
+	win = window.open(url, '_blank'); setTimeout(function() {
+		email = win.$('div.companyInfoContactEmail').find('a').text();
 		win.close();
 	}, 5000);
 	sum = $(all[index]).find('div.objectsItemInfoTotal').find("b").text();
