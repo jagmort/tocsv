@@ -41,7 +41,7 @@ for (index = 1; index < all.length; index++) {
 	csv += '"' + addr.replace(/"/g,'”').replace(/\n/g,' ').replace(/^\s+/g,'').replace(/\s+/g,' ') + '",';
 	csv += '"' + builder.replace(/"/g,'”').replace(/\n/g,' ').replace(/^\s+/g,'') + '",';
 	csv += '"' + contactB.replace(/"/g,'”').replace(/\n/g,' ').replace(/^\s+/g,'') + '",';
-    csv += '"' + email.replace(/"/g,'”').replace(/\n/g,' ').replace(/^\s+/g,'') + '",';
+    	csv += '"' + email.replace(/"/g,'”').replace(/\n/g,' ').replace(/^\s+/g,'') + '",';
 	csv += '"' + sum.replace(/"/g,'”').replace(/\n/g,' ').replace(/^\s+/g,'') + '",';
 	csv += '"' + date.replace(/"/g,'”').replace(/\n/g,' ').replace(/^\s+/g,'').replace(/\s+/g,' ') + '"\n';
 }
