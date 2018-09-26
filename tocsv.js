@@ -50,3 +50,5 @@ link.setAttribute('download', location.hostname + "-" + str_date + '-' + page + 
 document.body.appendChild(link);    
 link.click();
 document.body.removeChild(link);    
+
+$('li.next > a').click();
