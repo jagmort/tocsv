@@ -46,7 +46,7 @@ var csvData = new Blob([ary], {type: 'text/csv;charset=utf-8;'});
 
 var link = document.createElement('a');
 link.href = window.URL.createObjectURL(csvData);
-link.setAttribute('download', location.hostname + "-" + str_date + '-' + page + '.csv');
+link.setAttribute('download', str_date + '-page' + page + '.csv');
 document.body.appendChild(link);    
 link.click();
 document.body.removeChild(link);    
