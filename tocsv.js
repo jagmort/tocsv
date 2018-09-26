@@ -33,7 +33,7 @@ var date = new Date();
 var curr_date = date.getDate();
 var curr_month = date.getMonth() + 1;
 var curr_year = date.getFullYear();
-var str_date = curr_year + "-" + ("0" + curr_month).slice(-2) + "-" + ("0" + curr_date).slice(-2);
+var str_date = curr_year + ("0" + curr_month).slice(-2) + ("0" + curr_date).slice(-2);
 
 var searchParams = new URLSearchParams(window.location.search);
 var page = searchParams.get('page');
