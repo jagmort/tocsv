@@ -3,28 +3,25 @@ var next = true;
 var i = 0;
 
 var all = $('[id^=objectItem]');
+
 var builder = $(all[0]).find('div.objectsItemActivityOwner:contains("Генподрядчик")').find("a").text();
 var contact = $(all[0]).find('div.objectsItemInfoAddress:contains("Контакты генподрядчика")').find("p").text();
-//var email = $(all[0]).find('div.objectsItemActivityOwner:contains("Генподрядчик")').find("a").attr('href');
 var title = $(all[0]).find('div.objectsItemHeader').find("a").text();
 var addr = $(all[0]).find('div.objectsItemInfoAddress:contains("Адрес объекта")').find("p").text();
 
 csv += '"' + builder.replace(/"/g,'”').replace(/\n/g,' ').replace(/^\s+/g,'') + '";';
 csv += '"' + contact.replace(/"/g,'”').replace(/\n/g,' ').replace(/^\s+/g,'') + '";';
-//csv += '"' + email.replace(/"/g,'”').replace(/\n/g,' ').replace(/^\s+/g,'') + '",';
 csv += '"' + title.replace(/"/g,'”').replace(/\n/g,' ').replace(/^\s+/g,'');
 csv += ', ' + addr.replace(/"/g,'”').replace(/\n/g,' ').replace(/^\s+/g,'').replace(/\s+/g,' ') + '"\n';
 
 for (index = 1; index < all.length; index++) {
 	builder = $(all[index]).find('div.objectsItemActivityOwner:contains("Генподрядчик")').find("a").text();
 	contact = $(all[index]).find('div.objectsItemInfoAddress:contains("Контакты генподрядчика")').find("p").text();
-	//email = $(all[index]).find('div.objectsItemActivityOwner:contains("Генподрядчик")').find("a").attr('href');
 	title = $(all[index]).find('div.objectsItemHeader').find("a").text();
 	addr = $(all[index]).find('div.objectsItemInfoAddress:contains("Адрес объекта")').find("p").text();
 
 	csv += '"' + builder.replace(/"/g,'”').replace(/\n/g,' ').replace(/^\s+/g,'') + '";';
 	csv += '"' + contact.replace(/"/g,'”').replace(/\n/g,' ').replace(/^\s+/g,'') + '";';
-	//csv += '"' + email.replace(/"/g,'”').replace(/\n/g,' ').replace(/^\s+/g,'') + '",';
 	csv += '"' + title.replace(/"/g,'”').replace(/\n/g,' ').replace(/^\s+/g,'');
 	csv += ', ' + addr.replace(/"/g,'”').replace(/\n/g,' ').replace(/^\s+/g,'').replace(/\s+/g,' ') + '"\n';
 }
